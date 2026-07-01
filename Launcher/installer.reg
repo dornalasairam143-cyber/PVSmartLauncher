@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\PVSmartLauncher]
+@="Open using PV Smart Launcher"
+"Icon"="\"C:\\Program Files\\PVSmartLauncher\\PVSmartLauncher.exe\""
+
+[HKEY_CLASSES_ROOT\*\shell\PVSmartLauncher\command]
+@="\"C:\\Program Files\\PVSmartLauncher\\PVSmartLauncher.exe\" \"%1\""
