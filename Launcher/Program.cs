@@ -1,21 +1,22 @@
+namespace PVSmartLauncher;
+
 using System;
 using System.Windows.Forms;
 
-namespace PVSmartLauncher
+internal static class Program
 {
-    internal static class Program
+    [STAThread]
+    static void Main(string[] args)
     {
-        [STAThread]
-        static void Main(string[] args)
+        ApplicationConfiguration.Initialize();
+
+        // If PVSmartOpen.exe passed the file, or if dragged and dropped
+        string targetFile = string.Empty;
+        if (args.Length > 0)
         {
-            ApplicationConfiguration.Initialize();
-
-            string? serverFile = null;
-
-            if (args.Length > 0)
-                serverFile = args[0];
-
-            Application.Run(new MainForm(serverFile));
+            targetFile = args[0];
         }
+
+        Application.Run(new MainForm(targetFile));
     }
 }
